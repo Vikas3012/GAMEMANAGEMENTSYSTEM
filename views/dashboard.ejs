@@ -1,0 +1,25 @@
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.phoneNumber %></p>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Your Profile</h5>
+        <p><strong>Age:</strong> <%= user.age %></p>
+        <p><strong>Phone Number:</strong> <%= user.phoneNumber %></p>
+        <p><strong>Gender:</strong> <%= user.gender || 'Not specified' %></p>
+        <p><strong>Legal Status:</strong> <%= user.isLegal ? 'Legal' : 'Not Legal' %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Game Management</h5>
+        <p>Manage your games collection</p>
+        <a href="/games" class="btn btn-primary">View All Games</a>
+        <a href="/games/new" class="btn btn-success">Add New Game</a>
+      </div>
+    </div>
+  </div>
+</div>

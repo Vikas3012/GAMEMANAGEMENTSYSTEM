@@ -1,0 +1,25 @@
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <h2><%= game.gameName %></h2>
+    <div>
+      <a href="/games/<%= game._id %>/edit" class="btn btn-warning">Edit</a>
+      <form action="/games/<%= game._id %>?_method=DELETE" method="POST" class="d-inline">
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this game?')">Delete</button>
+      </form>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-8">
+        <p><strong>Game Name:</strong> <%= game.gameName %></p>
+        <p><strong>Number of Players:</strong> <%= game.numberOfPlayer %></p>
+        <p><strong>Game Duration:</strong> <%= game.gameDuration %> minutes</p>
+        <p><strong>Platform:</strong> <%= game.platform %></p>
+        <p><strong>Added on:</strong> <%= game.date.toLocaleDateString() %></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+    <a href="/games" class="btn btn-secondary">Back to Games List</a>
+  </div>
+</div>
